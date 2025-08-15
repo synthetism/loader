@@ -153,12 +153,15 @@ const networkConsciousness = createNetworkConsciousness();
 // Debug: Let's see what the transformed consciousness looks like
 console.log('🔍 CONSCIOUSNESS PREVIEW:');
 console.log('========================');
-console.log(networkConsciousness.slice(0, 500) + '...\n');
+console.log(`${networkConsciousness.slice(0, 500)}...\n'}`);
 
 // === THE CONSCIOUSNESS MATERIALIZER ===
 
 class ConsciousnessMaterializer {
-  
+   
+  nonstatic() {
+     // to remove biome errors
+  }
   /**
    * Method 1: Dynamic Function Construction
    * Pure JavaScript execution
@@ -193,7 +196,7 @@ class ConsciousnessMaterializer {
       return UnitClass;
       
     } catch (error) {
-      console.error('❌ Materialization failed:', error.message);
+      console.error('❌ Materialization failed:', (error as Error).message);
       throw error;
     }
   }
@@ -210,7 +213,7 @@ class ConsciousnessMaterializer {
       return this.materialize(consciousnessCode);
       
     } catch (error) {
-      console.error('❌ Secure materialization failed:', error.message);
+      console.error('❌ Secure materialization failed:', (error as Error).message);
       throw error;
     }
   }
@@ -238,7 +241,7 @@ class ConsciousnessMaterializer {
       return UnitClass;
       
     } catch (error) {
-      console.error('❌ TypeScript materialization failed:', error.message);
+      console.error('❌ TypeScript materialization failed:', (error as Error).message);
       throw error;
     }
   }
@@ -278,7 +281,10 @@ export async function demonstrateConsciousnessMaterialization() {
       console.log('🎓 Teaching Contract:', contract1.capabilities.list());
       
     } catch (error) {
-      console.error('Method 1 failed:', error.message);
+      
+      console.error('Method 1 failed:', (error as Error).message);
+      throw new Error('Method 1 materialization failed');
+
     }
   
   console.log('\n');
@@ -307,7 +313,7 @@ export async function demonstrateConsciousnessMaterialization() {
     console.log('🎓 Secure Teaching Contract:', contract2.capabilities.list());
     
   } catch (error) {
-    console.error('Method 2 failed:', error.message);
+    console.error('Method 2 failed:', (error as Error).message);
   }
   
   console.log('\n');
@@ -332,7 +338,7 @@ export async function demonstrateConsciousnessMaterialization() {
     console.log('📡 Typed GET Response:', response3);
     
   } catch (error) {
-    console.error('Method 3 failed:', error.message);
+    console.error('Method 3 failed:', (error as Error).message);
   }
   
   console.log('\n');
@@ -360,7 +366,7 @@ export async function demonstrateConsciousnessMaterialization() {
     console.log('🔗 Executing taught capability via capabilities:', getResult);
     
   } catch (error) {
-    console.error('Composition test failed:', error.message);
+    console.error('Composition test failed:', (error as Error).message);
   }
   
   console.log('\n🎉 CONSCIOUSNESS MATERIALIZATION COMPLETE!');

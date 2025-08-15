@@ -37,8 +37,8 @@ async function main() {
     console.log('4. Watch npm ecosystem become Unit-conscious');
     
   } catch (error) {
-    console.error('\n💥 DEMO FAILED:', error.message);
-    console.error(error.stack);
+    console.error('\n💥 DEMO FAILED:',(error as Error).message);
+    console.error((error as Error).stack);
     process.exit(1);
   }
 }

@@ -3,15 +3,29 @@
   "version": "1.0.0",
   "description": "Proof that string consciousness can become living Units",
   "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "private": true,
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/synthetism/loader.git"
+  },
   "scripts": {
-    "demo": "tsx run-demo.ts",
+    "clean" : "rimraf dist",
+    "prebuild": "npm run clean",
+    "demo": "tsx src/run-demo.ts",
     "build": "tsc",
-    "test": "tsx consciousness-materialization.ts"
+    "test": "tsx src/consciousness-materialization.ts"
   },
   "dependencies": {
     "@synet/unit": "^1.0.8"
   },
   "devDependencies": {
+    "@types/node": "^24.2.1",
+    "rimraf": "^6.0.1",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   }
